@@ -1,9 +1,11 @@
+-- Taken from relisoft_core https://github.com/Isigar/relisoft_core/blob/master/client/v2/native/marker.lua
+
 local lights = {}
 local nearLights = {}
 
 CreateThread(function()
     while true do 
-        Wait(config.CheckPlayerPosition)
+        Wait(config.checkPlayerPosition)
         local ped = PlayerPedId()
         local coords = GetEntityCoords(ped)
         for i, self in pairs(lights) do 
@@ -67,7 +69,6 @@ CreateThread(function()
 end)
 
 function createLight(res)
-    
     local self = {}
     self.id = tableLength(lights)+1
     self.resource = res 
@@ -84,7 +85,6 @@ function createLight(res)
     self.intensity = 0
     self.shadow = 0
     self.night = false
-
 
     self.setId = function(param)
         self.id = param
@@ -215,5 +215,3 @@ end
 
 
 exports('createLight', createLight)
-
-
