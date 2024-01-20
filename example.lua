@@ -29,7 +29,7 @@ function createLight()
             pcall(lights[k].destroy)
         end
 
-        local light = createLight(GetCurrentResourceName())
+        local light = exports["Lights"]:createLight(GetCurrentResourceName())
         light.render()
         light.setCoord(v.coords)
         light.onlyNight(v.onlyNight)
