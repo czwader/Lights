@@ -32,7 +32,7 @@ CreateThread(function()
             if self.night then 
                 local hour = GetClockHours()
                 
-                if distance < self.renderDist and not self.stopRendering and hour >= 20 or hour <= 6 then 
+                if distance < self.renderDist and not self.stopRendering and hour >= self.nightVar or hour <= self.dayVar then 
                     self.rendering = true
                 else
                     self.rendering = false
@@ -76,6 +76,8 @@ function createLight(res)
     self.renderDist = 20
     self.rendering = false
     self.stopRendering = false
+    self.nightVar = 20
+    self.dayVar = 6
     self.color = {
         r = 255,
         g = 255,
@@ -150,6 +152,16 @@ function createLight(res)
 
     self.onlyNight = function(param)
         self.night = param
+    end
+
+    self.setNight = function(param)
+        self.nightVar = param 
+        self.update()
+    end
+
+    self.setDay = function(param)
+        self.dayVar = param 
+        self.update()
     end
 
     self.update = function(destroy)
