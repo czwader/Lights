@@ -8,6 +8,8 @@ You can read how the source code works in the example.lua file.
 - setCoord(vector3())
 - render()
 - onlyNight(boolean)
+- setNight(number)
+- setDay(number)
 - setRenderDist(number)
 - setColor({r = interger, g = interger, b = interger})
 - setRange(number)
