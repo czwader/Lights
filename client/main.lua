@@ -140,18 +140,22 @@ function createLight(res)
 
     self.setRange = function(param)
         self.range = param
+        self.update()
     end
 
     self.setIntensity = function(param)
         self.intensity = param
+        self.update()
     end
 
     self.setShadow = function(param)
         self.shadow = param
+        self.update()
     end
 
     self.onlyNight = function(param)
         self.night = param
+        self.update()
     end
 
     self.setNight = function(param)
