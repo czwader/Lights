@@ -32,7 +32,7 @@ CreateThread(function()
             if self.night then 
                 local hour = GetClockHours()
                 
-                if distance < self.renderDist and not self.stopRendering and hour >= self.nightVar or hour <= self.dayVar then 
+                if distance < self.renderDist and not self.stopRendering and hour >= self.nightVar or hour < self.dayVar then 
                     self.rendering = true
                 else
                     self.rendering = false
