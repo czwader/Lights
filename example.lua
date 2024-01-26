@@ -16,7 +16,7 @@ config.lights = {
             b = 0
         },
         range = 50.0,
-        intensity = 1.0
+        intensity = 1.0,
         shadow = 10.0
     }
 }
